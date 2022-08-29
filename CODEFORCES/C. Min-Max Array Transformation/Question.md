@@ -1,0 +1,53 @@
+You are given an array a1,a2,…,an, which is sorted in non-descending order. You decided to perform the following steps to create array b1,b2,…,bn:
+
+Create an array d consisting of n arbitrary non-negative integers.
+Set bi=ai+di for each bi.
+Sort the array b in non-descending order.
+You are given the resulting array b. For each index i, calculate what is the minimum and maximum possible value of di you can choose in order to get the given array b.
+
+Note that the minimum (maximum) di-s are independent of each other, i. e. they can be obtained from different possible arrays d.
+
+Input
+The first line contains the single integer t (1≤t≤104) — the number of test cases.
+
+The first line of each test case contains a single integer n (1≤n≤2⋅105) — the length of arrays a, b and d.
+
+The second line contains n integers a1,a2,…,an (1≤ai≤109; ai≤ai+1) — the array a in non-descending order.
+
+The third line contains n integers b1,b2,…,bn (1≤bi≤109; bi≤bi+1) — the array b in non-descending order.
+
+Additional constraints on the input:
+
+there is at least one way to obtain the array b from the a by choosing an array d consisting of non-negative integers;
+the sum of n doesn't exceed 2⋅105.
+Output
+For each test case, print two lines. In the first line, print n integers dmin1,dmin2,…,dminn, where dmini is the minimum possible value you can add to ai.
+
+Secondly, print n integers dmax1,dmax2,…,dmaxn, where dmaxi is the maximum possible value you can add to ai.
+
+All dmini and dmaxi values are independent of each other. In other words, for each i, dmini is just the minimum value among all possible values of di.
+
+Example
+inputCopy
+4
+3
+2 3 5
+7 11 13
+1
+1000
+5000
+4
+1 2 3 4
+1 2 3 4
+4
+10 20 30 40
+22 33 33 55
+outputCopy
+5 4 2
+11 10 8
+4000
+4000
+0 0 0 0
+0 0 0 0
+12 2 3 15
+23 13 3 15
