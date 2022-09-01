@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define FAST() ios_base::sync_with_stdio(false);    cin.tie(nullptr);     cout.tie(nullptr);
+#define ll long long
+#define ld long double
+#define pb push_back
+#define Mod 1e9+7
+#define mii map<int,int> 
+#define All(v) v.begin(), v.end()
+#define CHECK cout<<"check"<<endl;
+
+typedef vector<int> vi;
+typedef vector<ll> vll;
+typedef vector<string> vs;
+typedef pair<int, int> pii;
+int dir[4][2]={{-1,0},{0,-1},{0,1},{1,0}};
+ 
+int main()
+{
+FAST();
+int tt; cin>>tt;
+while(tt--)
+{
+ ll n,m; cin>>n>>m;
+ ll a[m];
+ for(int i=0;i<m;i++)  cin>>a[i];
+//  CHECK;
+ sort(a,a+m);
+ vll v;
+  v.pb(n-a[m-1]+ a[0]-1);
+  for(int i=1;i<m;i++) v.pb(a[i]-a[i-1]-1);
+  sort(All(v),greater<int>());
+  int count=0;
+  // CHECK;
+  for(int i=0;i<v.size();i++)
+  {
+    ll x=v[i]-count*2;
+     if(x==1 ) {v[i]=1; count+=1;}
+     else {v[i]=max(x-1,(ll)0); count+=2;} 
+     
+  }
+ll ans=0;
+for(int i=0;i<v.size();i++) ans+=v[i];
+cout<<n-ans<<"\n";
+ 
+}
+return 0;
+}
