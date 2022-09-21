@@ -13,16 +13,11 @@ Return the reformatted string.
 
 
 <p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong>  nums1 = [1,2,3,2,1], nums2 = [3,2,1,4,7]
-<strong>Output:</strong> 3
+<pre><strong>Input:</strong> "5F3Z-2e-9-w", K = 4
+<strong>Output:</strong>"5F3Z-2E9W"
 </pre>
 
 
-Example 1:
-
-Input: 
-S = "5F3Z-2e-9-w", K = 4
-Output: "5F3Z-2E9W"
 Explanation: The string S has been split into two
 parts, each part has 4 characters. Note that two
 extra dashes are not needed and can be removed.
@@ -48,33 +43,37 @@ Expected Auxiliary Space: O(N)
  <strong><b>Solution</b></strong>
  <br>
  <p><pre>
- class Solution {
-public:
-    int findLength(vector<int>& nums1, vector<int>& nums2) {
-        ios_base::sync_with_stdio(0);
-        int n = nums1.size(),m = nums2.size();
-        vector<vector<int>>dp(n,vector<int>(m,0));
-        for(int i = n-1; i>=0; i--){
-            for(int j = m-1; j>=0; j--){
-                if(i==n-1 || j==m-1){
-                    if(nums1[i]==nums2[j]){
-                        dp[i][j] = 1;
-                    }
-                }
-                else{
-                    if(nums1[i]==nums2[j]){
-                        dp[i][j] = 1+dp[i+1][j+1];
-                    }
-                }
-            }
-        }
-        int ans = 0;
-        for(int i = 0; i<n; i++){
-            for(int j = 0; j<m; j++){
-                ans = max(ans,dp[i][j]);
-            }
-        }
-        return ans;
+ class Solution
+{
+   public:
+    string ReFormatString(string s1, int k){
+    	transform(s1.begin(), s1.end(), s1.begin(), ::toupper);
+    	string ans="";
+    	string s="";
+    	for(int i=0;i<s1.size();i++)
+    	{
+    	    if(s1[i]!='-') s+=s1[i];
+    	}
+    	int x=s.size()/k,i=0;
+    	x=s.size()-x*k;
+    	if(x!=0)
+    	{
+    	    while(x--)
+    	    {
+    	        ans+=s[i++];
+    	    }
+    	   if(i!=s.size()) ans+='-';
+    	}
+    	while(i<s.size())
+    	{
+    	     int j=0;
+    	     while(i<s.size() && j<k)
+    	     {
+    	         ans+=s[i++]; j++;
+    	     }
+    	     if(i!=s.size()) ans+='-';
+    	}
+    	return ans;
     }
 };
  </pre>
