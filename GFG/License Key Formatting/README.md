@@ -1,6 +1,6 @@
 
 <h2><a href="https://practice.geeksforgeeks.org/problems/license-key-formatting/1">License Key Formatting</a></h2>
-<h3>Medium</h3>
+<h3>4 points</h3>
 <hr>
 <div><p>
  Given a string S that consists of only alphanumeric characters and dashes. The string is separated into N + 1 groups by N dashes. Also given an integer K. 
@@ -15,12 +15,13 @@ Return the reformatted string.
 <p><strong>Example 1:</strong></p>
 <pre><strong>Input:</strong> "5F3Z-2e-9-w", K = 4
 <strong>Output:</strong>"5F3Z-2E9W"
+<p>
+Explanation: The string S has been split into two
+parts, each part has 4 characters. Note that two
+extra dashes are not needed and can be removed. </p>
 </pre>
 
 
-Explanation: The string S has been split into two
-parts, each part has 4 characters. Note that two
-extra dashes are not needed and can be removed.
 Example 2:
 
 Input:
