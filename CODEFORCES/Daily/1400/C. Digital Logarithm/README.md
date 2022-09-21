@@ -31,8 +31,7 @@ For each testcase, print the smallest number of operations required to make a an
 </p>
 <pre>
   
-Example
-inputCopy
+Example 1
 4
 1
 1
@@ -46,16 +45,16 @@ inputCopy
 10
 75019 709259 5 611271314 9024533 81871864 9 3 6 4865
 9503 2 371245467 6 7 37376159 8 364036498 52295554 169
-outputCopy
+
+<strong>output <strong>
 2
 0
 2
 18
+
 Note
 In the first testcase, you can apply the digital logarithm to b1 twice.
-
 In the second testcase, the arrays are already similar to each other.
-
 In the third testcase, you can first apply the digital logarithm to a1, then to b2.
   
 </pre>
