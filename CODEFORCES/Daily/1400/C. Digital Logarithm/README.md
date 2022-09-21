@@ -29,7 +29,7 @@ For each testcase, print the smallest number of operations required to make a an
 
   
 </p>
-
+<pre>
   
 Example
 inputCopy
@@ -58,7 +58,7 @@ In the second testcase, the arrays are already similar to each other.
 
 In the third testcase, you can first apply the digital logarithm to a1, then to b2.
   
-
+</pre>
 <hr>
  <h2><strong><b>Solution</b></strong></h2>
  <br>
